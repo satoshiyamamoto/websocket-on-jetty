@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebSocket on Jetty</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<h1>WebSocket on Jetty</h1>
+<input type="text" id="message">
+<input type="submit" value="send" id="send">
+<div id="log"></div>
+<script type="text/javascript">
+var ws = new WebSocket("ws://172.17.6.92:8080/chat");
+
+ws.onopen = function() {
+	console.log('opened.');
+};
+
+ws.onmessage = function(e) {
+	console.log('recieved. message=' + e.data);
+	$("#log").append("<p>" + e.data + "</p>");
+};
+
+ws.onclosed = function() {
+	console.log('closed.');
+};
+
+ws.onerror = function(e) {
+	console.error(e);
+};
+	
+$("#send").on("click", function(e) {
+	e.preventDefault();
+	ws.send($("#message").val());
+	$("#message").val("");
+})
+</script>
+</body>
+</html>
