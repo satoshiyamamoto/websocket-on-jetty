@@ -10,7 +10,7 @@
 <input type="submit" value="send" id="send">
 <div id="log"></div>
 <script type="text/javascript">
-var ws = new WebSocket("ws://172.17.6.92:8080/chat");
+var ws = new WebSocket("ws://" + location.host + "/chat");
 
 ws.onopen = function() {
 	console.log('opened.');
