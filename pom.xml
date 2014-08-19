@@ -4,7 +4,7 @@
 	<groupId>name.yamamoto.satoshi</groupId>
 	<artifactId>websocket-on-jetty</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>demo</version>
 
 	<properties>
 		<java.version>1.7</java.version>
@@ -51,20 +51,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty.version}</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.eclipse.jetty.websocket</groupId>
-						<artifactId>websocket-server</artifactId>
-						<version>${jetty.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
 		</plugins>
-
 	</build>
 
 	<dependencies>

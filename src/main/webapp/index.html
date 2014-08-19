@@ -18,7 +18,7 @@ ws.onopen = function() {
 
 ws.onmessage = function(e) {
 	console.log('recieved. message=' + e.data);
-	$("#log").append("<p>" + e.data + "</p>");
+	$("#log").prepend("<p>" + e.data + "</p>");
 };
 
 ws.onclosed = function() {
